@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -42,9 +42,10 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        spell = true, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-        wrap = false, -- sets vim.opt.wrap
+        wrap = true, -- sets vim.opt.wrap
+        shell = "zsh -l", -- use zsh as default shell so it sources .zprofile
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -79,6 +80,15 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      t = {
+        -- make Esc leave terminal mode
+        ["<Esc>"] = { "<C-\\><C-n>", desc = "Exit terminal mode" },
+      },
+      i = {
+        -- ff to escape (capslock doesn't work and can't be used)
+        -- equivalent to vim.api.nvim_set_keymap('i', 'ff', '<Esc>', {noremap=true})
+        ["ff"] = { "<esc>", desc = "Escape" },
       },
     },
   },

@@ -1,0 +1,243 @@
+# Shortcut keys
+
+- Undo
+    - u
+- Redo
+    - Ctrl + r
+- Copy
+	- Copy line
+		- yy
+	- Copy word
+		- using visual mode
+			- viwy
+		- yw
+		- yiw
+	- Copy character
+		- y
+	- Copy selection
+		- First maek selection
+		- y
+- Paste
+	- paset after cursor or line (depending on whether you copied line or cahracter)
+		- p
+	- paste before c ursor
+		- P
+- Delete (when you delete something, it also copies to clipboard)
+	- Delete line
+		- dd
+	- Delete currently selected letter
+		- x
+	- Delete currently word
+		- dw
+		- delete in word
+			- diw
+		- delete around word
+			- daw (e.g. "Hello " will delete everything including space in string)
+		- delete in paragraph
+			- dip
+- Replace single character with another character
+	- 1. r
+	- 2. (type character you want to replace with)
+- Insert mode to left of block cursor
+	- i
+- Insert mode to beginning of line
+	- I
+- Insert mode to right of block cursor
+	- a
+- Insert mode at end of line
+	- A
+- Insert mode at new line beneath cursor
+	- o
+- Navigating
+	- Basic
+		- h -> left
+		- j -> down
+		- k -> up
+		- l -> right
+	- Page
+		- beginning of page
+			- gg
+		- end of page
+			- G
+		- go to middle of currently visible screen
+			- M
+		- Make cursor the middle of the screen
+			- zz
+	- Line
+		- beginning of line
+			- 0
+		- beginngin of line of text
+			- _
+		- end of line
+			- $
+	- Scrolling
+		- Slow
+			- Up
+				- Ctrl y
+			- Down
+				- Ctrl e
+		- Jump
+			- Up
+				- Ctrl u
+			- Down
+				- Ctrl d
+	- File tree
+		- Left
+			- >
+		- Right
+			- <
+	- Switch buffers (tabs)
+		- right
+			- ]b
+		- left
+			- [b
+	- Close buffer (tab)
+		- Space c
+- Word traversal
+	- move forward a word with cursor at beginning of word
+		- w
+	- move back a word w/cursort at beginning of word
+		- b
+	- move forward a word w/cursor at end of word
+		- e
+	- move bac a word w/cursor at end of word
+		- ge
+- Find
+	- File
+		- fine methods
+			- First put cursor over word. then type
+				- *
+			- Type / and then search for text
+				- Result at/after cursor
+					- /
+				- result before cursor
+					- ? (this is shift /)
+		- Move to next search
+			- n
+		- Move to previous search
+			- N
+	- Line
+		- f (letter)
+			- e.g. ft goes to first occcurenc of t in line
+		- (count) f (letter)
+			- e.g. 4ft goest to 4th occurence of t in line
+		- after typing command
+			- go to next occurence
+				- ;
+			- go to previous occurence
+				- ,
+	- Files across files
+		- Space ff
+		- Include hidden files
+			- Space fF
+	- Git files specifically
+		- Space fg
+	- Words across files
+		- Space fw
+		- Includ hidden files
+			- Space fW
+	- Symbols in file
+		- Space ls
+	- All references of symbol
+		- First hover over symbol, then type
+			- Quickest
+				- Space lR
+			- Another way
+				- grr
+	- Find all errors
+		- Space lD
+- Go to
+	- Go to definition of symbol
+		- gd
+	- Go to implementation
+		- gi
+- Change
+	- Change in word
+		- ciw
+	- Chance in brackets
+		- ci(
+		- ci)
+		- cib
+- Replay previous command
+	- .
+- Toggle bt/ open/close brackets
+	- %
+- Visual mode
+	- visual to select characters
+		- v
+	- visual to select lines
+		- V
+	-  visual to select a column
+		- Ctrl v
+- Go to previous cursor and back (same applies when navigating between files)
+	- Preivous cursor
+		- Ctrl o
+	- Next cursor
+		- Ctrl i
+- Go to definition of symbol
+	- gd
+- Go to line
+	- (line number) G (e.g. 42G)
+- Switch between absolute & relative number
+	- absolute
+		- :set norelativenumber
+	- relative
+		- :set relativenumber
+	- quick method
+		- Space un
+- Toggle wrap
+	- Space uw
+- Switch between windows
+	- Return/release focus of file tree
+		- Space o
+	- Naviagate between widnows
+		- Ctrl w
+		- Then choose h,j,k,l
+- Reload
+	- Reload AstroNvim
+		- :AstroReload
+	- Reload file
+		- :e
+	- Usually quitting and restarting nvim is best
+	- Lazy
+		- Sync plugins
+			- :Lazy sync
+		- Clean plugins
+			- :Lazy clean
+		- Update plugins
+			- :Lazy update
+- Open terminal
+	- traidtional
+		- Space t (then choose option like h for horizontal split)
+		- Go to insert mode
+			- i
+		- Escape
+			- Ctrl \ Ctrl n
+				- I remapped this to Esc in `lua/plugins/astrocore` mappings section for t
+	- Quick
+		- F7
+- Open file tree
+	- Space e
+- Comment
+	- Space /
+- Open docs for symbol
+	- K
+		- Go into popup
+			- K
+		- Quit
+			- q
+- View full error
+	- gl
+		- Go into the error popup
+			- gl
+		- Quit
+			- q
+- Rename symbol
+	- Space lr
+	- Space grr
+- Bring up code actions
+	- Space la
+- Select all text in file
+	- ggVG
+- Change window size
+	- Ctrl w (+, -, >, <, 5+, 5>, etc.)
